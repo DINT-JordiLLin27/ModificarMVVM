@@ -30,7 +30,7 @@ namespace WpfApp4
         {
             string nombreCliente = (this.DataContext as MainWindowVM).GetClienteNombreCompleto();
 
-            MessageBoxResult boxResult = MessageBox.Show("¿Actualizar " + nombreCliente + "?", "Actualizar Dato", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation);
+            MessageBoxResult boxResult = MessageBox.Show("¿Actualizar cliente actual a " + nombreCliente + "?", "Actualizar Dato", MessageBoxButton.OKCancel, MessageBoxImage.Exclamation);
 
             if (boxResult == MessageBoxResult.OK)
             {
@@ -42,7 +42,7 @@ namespace WpfApp4
 
         private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-            e.CanExecute = ModificarDatosComboBox.SelectedItem != null;
+            e.CanExecute = (this.DataContext as MainWindowVM).canExecute();
         }
     }
 }

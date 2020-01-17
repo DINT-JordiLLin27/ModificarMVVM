@@ -32,6 +32,10 @@ namespace WpfApp4
             return CLIENTE_SELECCIONADO.nombre + " " + CLIENTE_SELECCIONADO.apellido;
         }
 
+        public bool canExecute() {
+            return CLIENTE_SELECCIONADO != null;
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
     }
 }
